@@ -11,18 +11,18 @@ services:
     volumes:
       - pg_data_production:/var/lib/postgresql/data
   backend:
-    image: sunnsses/taski_backend
+    image: user1234/taski_backend # Необходимо указать название image
     env_file: .env
     volumes:
       - static_volume:/backend_static
   frontend:
-    image: sunnsses/taski_frontend  # Качаем с Docker Hub
+    image: user1234/taski_frontend  # Необходимо указать название image
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
   gateway:
-    image: sunnsses/taski_gateway  # Качаем с Docker Hub
+    image: user1234/taski_gateway  # Необходимо указать название image
     env_file: .env
     volumes:
       - static_volume:/staticfiles/
